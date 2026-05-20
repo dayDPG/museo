@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/web">Museo</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/web/exposiciones">Exposiciones</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/web/obras">Obras</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Obras</h1>
+        <a class="btn btn-primary" href="/web/obras/nueva">Nueva obra</a>
+    </div>
+
+    <div th:if="${#lists.isEmpty(obras)}" class="alert alert-info">
+        No hay obras registradas.
+    </div>
+
+    <div th:if="${!#lists.isEmpty(obras)}">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Técnica</th>
+                    <th>Exposición</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="obra : ${obras}">
+                    <td th:text="${obra.titulo}"></td>
+                    <td th:text="${obra.autor}"></td>
+                    <td th:text="${obra.tecnica}"></td>
+                    <td th:text="${obra.exposicion != null ? obra.exposicion.titulo : 'Sin exposición'}"></td>
+                    <td>
+                        <a th:href="@{/web/obras/{id}/editar(id=${obra.id})}" class="btn btn-sm btn-warning">Editar</a>
+                        <a th:href="@{/web/obras/{id}/eliminar(id=${obra.id})}" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar esta obra?');">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
