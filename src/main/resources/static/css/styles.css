@@ -1,0 +1,66 @@
+/* Estilos globales de la aplicación Museo */
+body {
+    background-color: #f4f6f9;
+    color: #212529;
+    min-height: 100vh;
+}
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.container {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.card, .table, .form-control, .form-select, .btn {
+    border-radius: 0.5rem;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.btn-primary {
+    background-color: #2f69ff;
+    border-color: #2f69ff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #254fd1;
+    border-color: #254fd1;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.alert-info {
+    background-color: #e9f5ff;
+    border-color: #d0e6ff;
+    color: #0c5460;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: #6c757d;
+}

@@ -42,6 +42,7 @@ public class WebController {
     @GetMapping("/exposiciones/nueva")
     public String crearExposicion(Model model) {
         model.addAttribute("exposicion", new ModeloExposicion());
+        model.addAttribute("actionUrl", "/web/exposiciones/nueva");
         return "exposiciones/formulario";
     }
 
@@ -54,6 +55,7 @@ public class WebController {
     @GetMapping("/exposiciones/editar/{id}")
     public String editarExposicion(@PathVariable Long id, Model model) {
         servicio.obtenerExposicionId(id).ifPresent(exposicion -> model.addAttribute("exposicion", exposicion));
+        model.addAttribute("actionUrl", "/web/exposiciones/editar/" + id);
         return "exposiciones/formulario";
     }
 
@@ -97,6 +99,7 @@ public class WebController {
     public String crearObra(Model model) {
         model.addAttribute("obra", new ModeloObra());
         model.addAttribute("exposiciones", servicio.listarAllExposiciones());
+        model.addAttribute("actionUrl", "/web/obras/nueva");
         return "obras/formulario";
     }
 
@@ -112,6 +115,7 @@ public class WebController {
             model.addAttribute("obra", obra);
             model.addAttribute("exposiciones", servicio.listarAllExposiciones());
         });
+        model.addAttribute("actionUrl", "/web/obras/editar/" + id);
         return "obras/formulario";
     }
 

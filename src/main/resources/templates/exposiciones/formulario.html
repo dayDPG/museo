@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Exposición</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -21,7 +22,7 @@
 <div class="container mt-4">
     <h1 th:text="${exposicion.id} != null ? 'Editar exposición' : 'Nueva exposición'"></h1>
 
-    <form th:action="@{/web/exposiciones}" th:object="${exposicion}" method="post">
+    <form th:action="${actionUrl}" th:object="${exposicion}" method="post">
         <input type="hidden" th:field="*{id}" />
         <div class="mb-3">
             <label class="form-label">Título</label>
