@@ -52,10 +52,9 @@
 
         <div class="mb-3">
             <label class="form-label">Exposición</label>
-            <select class="form-select" name="exposicion">
-                <option value="" disabled="disabled" th:selected="${obra.exposicion == null}">-- Seleccione --</option>
-                <option th:each="exp : ${exposiciones}" th:value="${exp.id}" th:text="${exp.titulo}"
-                        th:selected="${obra.exposicion != null and obra.exposicion.id == exp.id}"></option>
+            <select class="form-select" th:field="*{exposicion}">
+                <option value="">-- Seleccione --</option>
+                <option th:each="exp : ${exposiciones}" th:value="${exp.id}" th:text="${exp.titulo}"></option>
             </select>
         </div>
 

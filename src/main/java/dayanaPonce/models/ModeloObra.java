@@ -23,6 +23,8 @@ public class ModeloObra {
 
     @ManyToOne
     @JoinColumn(name = "exposicion_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private ModeloExposicion exposicion;
 
     //Getters y Setters automaticamente generados por Lombok !!!

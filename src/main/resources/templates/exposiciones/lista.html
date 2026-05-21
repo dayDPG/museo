@@ -47,6 +47,7 @@
                     <td th:text="${exposicion.fechaInicio}"></td>
                     <td th:text="${exposicion.fechaFin}"></td>
                     <td>
+                        <a th:href="@{'/web/exposiciones/' + ${exposicion.id}}" class="btn btn-sm btn-info">Ver detalles</a>
                         <a th:href="@{'/web/exposiciones/editar/' + ${exposicion.id}}" class="btn btn-sm btn-warning">Editar</a>
                         <form th:action="@{'/web/exposiciones/borrar/' + ${exposicion.id}}" method="post" class="d-inline">
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar esta exposición?');">Eliminar</button>

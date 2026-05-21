@@ -81,7 +81,7 @@ public class WebController {
     public String detalleExposicion(@PathVariable Long id, Model model) {
         servicio.obtenerExposicionId(id).ifPresent(exposicion -> {
             model.addAttribute("exposicion", exposicion);
-            model.addAttribute("obras", servicio.listarAllObras(null, null, null));
+            model.addAttribute("obras", servicio.filtrarObrasPorExposicion(id));
             model.addAttribute("valorTotal", servicio.calcularValorTotalObras(id));
         });
         return "exposiciones/detalle";

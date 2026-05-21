@@ -1,32 +1,40 @@
-# Museo
 
-Este proyecto es una aplicación Spring Boot para gestionar exposiciones y obras.
+# MUSEO
+Para ver exposiciones de arte y las obras que tienen.
 
-## Rutas web
+### *RUTAS WEB*
 
-- UI principal: `http://localhost:8080/web/exposiciones`
-- Ver exposiciones: `http://localhost:8080/web/exposiciones`
-- Ver obras: `http://localhost:8080/web/obras`
+- UI principal: http://localhost:8080/web/exposiciones
+- Ver exposiciones: http://localhost:8080/web/exposiciones
+- Ver obras: http://localhost:8080/web/obras
 
-## API REST
+### *API REST*
 
-- Listar exposiciones: `http://localhost:8080/api/exposiciones`
-- Listar obras: `http://localhost:8080/api/obras`
-- Lista de obras de una exposición: `http://localhost:8080/api/exposiciones/{id}/obras`
-- Valor total de obras de una exposición: `http://localhost:8080/api/exposiciones/{id}/valor-total`
+- Listar exposiciones: http://localhost:8080/api/exposiciones
+- Listar obras: http://localhost:8080/api/obras
+- Lista de obras de una exposición: http://localhost:8080/api/exposiciones/{id}/obras
+- Valor total de obras de una exposición: http://localhost:8080/api/exposiciones/{id}/valor-total
 
-## Docker
+### __*DOCKER!!!*__
+__Iniciar__ el docker:
 
-- Iniciar servicios:
-  ```powershell
-  docker compose up --build --force-recreate -d
-  ```
-- Detener y limpiar:
-  ```powershell
-  docker compose down --remove-orphans
-  ```
+```bash
+    docker compose up -d
+```
+__Eliminar__ el contenedor
+```bash
+    docker compose down
+```
+*Eliminar contenedor mas datos  :*       `docker compose down -v`
 
-## Notas
+#
 
-- La UI del proyecto está bajo el prefijo `/web`.
-- El puerto de la app es `8080`.
+#### TEMA ASIGNADO 
+|EXPOSICION	|OBRA|
+|---|---|
+|titulo|`titulo`|
+|fechaInicio|`autor`|
+|fechaFin|`año`|
+|ciudad	| `tecnica`|
+|---|`valorEuros`|
+#

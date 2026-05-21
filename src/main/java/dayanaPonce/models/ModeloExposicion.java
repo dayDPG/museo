@@ -23,6 +23,8 @@ public class ModeloExposicion {
                             // filtrar mejor asi 
 
     @OneToMany(mappedBy = "exposicion", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private List<ModeloObra> obras;
 
     //Getters y Setters automáticamente generados por Lombok !!!
