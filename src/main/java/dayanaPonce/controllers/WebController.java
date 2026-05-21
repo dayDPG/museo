@@ -89,8 +89,14 @@ public class WebController {
 
     // --- OBRAS ---
     @GetMapping("/obras")
-    public String listarObras(@RequestParam(required = false) String tecnica, Model model) {
-        model.addAttribute("obras", servicio.listarAllObras(null, null, tecnica));
+    public String listarObras(
+            @RequestParam(required = false) String titulo,
+            @RequestParam(required = false) String autor,
+            @RequestParam(required = false) String tecnica,
+            Model model) {
+        model.addAttribute("obras", servicio.listarAllObras(titulo, autor, tecnica));
+        model.addAttribute("titulo", titulo);
+        model.addAttribute("autor", autor);
         model.addAttribute("tecnica", tecnica);
         return "obras/lista";
     }

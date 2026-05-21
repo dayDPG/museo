@@ -34,7 +34,7 @@ public class ServicioGeneral {
                 return obraRepo.findByAutorContainingIgnoreCase(autor);
             }
             if (tecnica != null && !tecnica.isEmpty()) {
-                return obraRepo.findByTecnicaIgnoreCase(tecnica);
+                return obraRepo.findByTecnicaContainingIgnoreCase(tecnica);
             }
             return listarAllObras();
     }

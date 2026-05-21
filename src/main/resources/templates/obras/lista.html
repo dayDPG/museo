@@ -24,11 +24,36 @@
         <h1>Obras</h1>
         <a class="btn btn-primary" href="/web/obras/nueva">Nueva obra</a>
     </div>
-
+ 
+    <!-- Formulario de filtros -->
+    <form method="get" action="/web/obras" class="card card-body mb-4">
+        <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+                <label class="form-label">Buscar por título</label>
+                <input type="text" name="titulo" class="form-control"
+                       placeholder="Ej: La Gioconda" th:value="${titulo}" /> <!-- de guia al usuario -->
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Buscar por autor</label>
+                <input type="text" name="autor" class="form-control"
+                       placeholder="Ej: Da Vinci" th:value="${autor}" /><!-- de guia al usuario -->
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Filtrar por técnica</label>
+                <input type="text" name="tecnica" class="form-control"
+                       placeholder="Ej: Óleo" th:value="${tecnica}" /> <!-- de guia al usuario -->
+            </div>
+            <div class="col-md-2 d-flex gap-2">
+                <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+                <a href="/web/obras" class="btn btn-secondary w-100">Limpiar</a>
+            </div>
+        </div>
+    </form>
+ 
     <div th:if="${#lists.isEmpty(obras)}" class="alert alert-info">
-        No hay obras registradas.
+        No hay obras que coincidan con los filtros :(...
     </div>
-
+ 
     <div th:if="${!#lists.isEmpty(obras)}">
         <table class="table table-striped">
             <thead>
@@ -49,7 +74,8 @@
                     <td>
                         <a th:href="@{'/web/obras/editar/' + ${obra.id}}" class="btn btn-sm btn-warning">Editar</a>
                         <form th:action="@{'/web/obras/borrar/' + ${obra.id}}" method="post" class="d-inline">
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar esta obra?');">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('¿Eliminar esta obra?');">Eliminar</button>
                         </form>
                     </td>
                 </tr>
