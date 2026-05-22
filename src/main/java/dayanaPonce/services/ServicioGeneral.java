@@ -27,6 +27,7 @@ public class ServicioGeneral {
         return (List<ModeloObra>) obraRepo.findAll();
     }
     public List<ModeloObra> listarAllObras(String titulo, String autor, String tecnica) {
+        // por orden de prioridad se lista -> titulo > autor > tecnica
             if (titulo != null && !titulo.isEmpty()) {
                 return obraRepo.findByTituloContainingIgnoreCase(titulo);
             }
@@ -64,6 +65,7 @@ public class ServicioGeneral {
     }
 
     public List<ModeloExposicion> listarAllExposiciones(String titulo, String ciudad, LocalDate fecha) {
+        // por orden de prioridad se lista -> titulo > ciudad > fecha
         if (titulo != null && !titulo.isEmpty()) {
             return filtrarExposTitulo(titulo);
         }

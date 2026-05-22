@@ -19,7 +19,10 @@ public class ModeloObra {
     private String autor;
     private Year añoCreacion;
     private String tecnica;
-    private int valorEuros;
+    private int valorEuros; //Lo dejo en int pq,a lo mejor me equivoco, pero es usual redondeanrlo al valor mas cercano
+                            //en especial cuando es solo la estimacion del valor de la obra
+                            //(aparte q me di cuenta al final)
+                                //---- en todo caso usar BigDecimal, asi es un mejor uso de los decimales----
 
     @ManyToOne
     @JoinColumn(name = "exposicion_id")
