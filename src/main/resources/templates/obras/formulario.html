@@ -58,7 +58,7 @@
                 <div class="form-group">
                     <label class="form-label">Exposición</label>
                     <select class="form-select" th:field="*{exposicion}">
-                        <option value="">— Sin exposición —</option>
+                        <option value=""> — Sin exposición — </option>
                         <option th:each="exp : ${exposiciones}" th:value="${exp.id}" th:text="${exp.titulo}"></option>
                     </select>
                 </div>

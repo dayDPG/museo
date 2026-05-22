@@ -3,43 +3,59 @@
 /*hasta decidir que colores usar ....... */
 :root {
 
-    --bg-page: #f5ede3;
-    --bg-surface: #e8dff5;/* fondo de tarjetas, tablas*/
-    --bg-input: #d6ccea;/*fondo de los inputs*/
+    --bg-page: #eef2f0;
+    /*del fondo*/
+    --bg-surface: #dde6e1;
+    /* fondo de tarjetas, tablas*/
+    --bg-input: #ccd8d2;
+    /*fondo de los inputs*/
 
     /*Navbar*/
-    --bg-navbar: #7a1219; 
-    --txt-navbar-brand: #f5ede3; /*texto navbar*/
-    --txt-navbar-link: #e8c5b0; /* color de la pagina no usada*/
+    --bg-navbar: #1c2b3a;
+    --txt-navbar-brand: #eef0f2;
+    /*texto navbar*/
+    --txt-navbar-link: #8fa8bb;
+    /* color de la pagina no usada*/
+    --txt-navbar-active: #ffffff;
 
     /* — Textos del contenido — */
-    --txt-titulo: #0d0847; 
-    
-    --txt-detalle-label: #e07b1a;
-    --txt-detalle-val: #0d0847; /*dentro de ver detalles */
-    --txt-col-header: #f5ede3;
-    
-    --txt-fila: #3d3570; /* datos de cada fila del tbody */
-    --txt-form-label: #3d3570;/*labels de los formularios*/
-    --txt-form-input: #0d0847;/*color del texto al ingresar inputs*/
-    --txt-secundario: #6b6090;
+    --txt-titulo: #1c2b3a;
 
-    --bg-thead: #0d0847;/*cabecera de tabla */
-    --bg-total-panel: #0d0847;/*panel balor total*/
-    --txt-total-val: #f5ede3; /*color del valot total de obras*/
+    --txt-detalle-label: #c49a28;
+    --txt-detalle-val: #1c2b3a;
+    /*dentro de ver detalles */
+    --txt-col-header: #eef2f0;
+
+    --txt-fila: #2e4558;
+    /* datos de cada fila del tbody */
+    --txt-form-label: #2e4558;
+    /*labels de los formularios*/
+    --txt-form-input: #1c2b3a;
+    /*color del texto al ingresar inputs*/
+    --txt-secundario: #5a7a8a;
+
+    --bg-thead: #1c2b3a;
+    /*cabecera de tabla */
+    --bg-total-panel: #1c2b3a;
+    /*panel valor total*/
+    --txt-total-val: #eef2f0;
+    /*color del valor total de obras*/
 
     /* — Botones — */
-    --color-accent: #0d0847;
-    --color-accent-dk: #cd5d67;
+    --color-accent: #1c2b3a;
+    --color-accent-dk: #2e4558;
 
-    --color-enviar: #b07d15; /* btn enviar - editar */
-    --color-enviar-dk: #cd5d67;
+    --color-enviar: #c96a1a;
+    /* btn enviar - editar */
+    --color-enviar-dk: #a35214;
 
-    --color-eliminar: #8b1e0e; /*Eliminar */
-    --color-eliminar-dk: #cd5d67;
+    --color-eliminar: #8b2010;
+    /*Eliminar */
+    --color-eliminar-dk: #6b1508;
 
-    --color-ver: #155e7a;/*er detalles */
-    --color-ver-dk: #cd5d67;
+    --color-ver: #2a6b4a;
+    /*ver detalles */
+    --color-ver-dk: #1e5238;
 
     --font-display: "Lucida Sans", "Lucida Grande", sans-serif;
     --font-body: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -247,7 +263,7 @@ body {
     gap: 0.35rem;
     font-family: var(--font-body);
     font-size: 0.88rem;
-    font-weight: 600;
+    font-weight: 300;
     padding: 0.55rem 1.1rem;
     border-radius: var(--radius-md);
     border: none;

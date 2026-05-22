@@ -19,20 +19,5 @@ services:
       timeout: 5s
       retries: 5
 
-  app:
-    build: .
-    container_name: museo_app
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysql
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/museo_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: museo_user
-      SPRING_DATASOURCE_PASSWORD: museo_pass
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    volumes:
-      - .:/workspace:cached
-
 volumes:
   mysql_data:
