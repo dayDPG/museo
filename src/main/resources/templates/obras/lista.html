@@ -9,22 +9,24 @@
 </head>
 
 <body>
+
     <nav class="navbar">
-        <div class="container"
-            style="padding-top:0;padding-bottom:0;display:flex;align-items:center;justify-content:space-between;">
+        <div class="navbar-inner">
             <a class="navbar-brand" href="/web">Museo</a>
-            <ul style="list-style:none;display:flex;gap:0.25rem;margin:0;padding:0;">
+            <ul class="navbar-links">
                 <li><a class="nav-link" href="/web/exposiciones">Exposiciones</a></li>
                 <li><a class="nav-link active" href="/web/obras">Obras</a></li>
             </ul>
         </div>
     </nav>
-    <div class="container mt-4">
+
+    <div class="container">
+
         <div class="page-header">
             <h1 class="page-title">Obras</h1>
             <a class="btn btn-primary" href="/web/obras/nueva">+ Nueva obra</a>
         </div>
-        <!-- Formulario de filtros -->
+
         <form method="get" action="/web/obras" class="filter-panel">
             <div class="filter-row">
                 <div class="filter-field">
@@ -73,7 +75,7 @@
                         <td>
                             <div class="td-actions">
                                 <a th:href="@{'/web/obras/editar/' + ${obra.id}}"
-                                    class="btn btn-sm btn-enviar">Editar</a> <!-- btn-enviar por mas q sea editar, ya q usa el mismo style de css-->
+                                    class="btn btn-sm btn-enviar">Editar</a>
                                 <form th:action="@{'/web/obras/borrar/' + ${obra.id}}" method="post">
                                     <button type="submit" class="btn btn-sm btn-eliminar"
                                         onclick="return confirm('¿Eliminar esta obra?');">Eliminar</button>
@@ -87,7 +89,5 @@
 
     </div>
 </body>
-
-</html>
 
 </html>

@@ -11,10 +11,9 @@
 <body>
 
     <nav class="navbar">
-        <div class="container"
-            style="padding-top:0;padding-bottom:0;display:flex;align-items:center;justify-content:space-between;">
+        <div class="navbar-inner">
             <a class="navbar-brand" href="/web">Museo</a>
-            <ul style="list-style:none;display:flex;gap:0.25rem;margin:0;padding:0;">
+            <ul class="navbar-links">
                 <li><a class="nav-link active" href="/web/exposiciones">Exposiciones</a></li>
                 <li><a class="nav-link" href="/web/obras">Obras</a></li>
             </ul>
@@ -26,9 +25,8 @@
         <div class="page-header">
             <h1 class="page-title" th:text="${exposicion.titulo}"></h1>
             <div class="detail-actions">
-                <a th:href="@{'/web/exposiciones/editar/' + ${exposicion.id}}" class="btn btn-editar">Editar</a>
-                <form th:action="@{'/web/exposiciones/borrar/' + ${exposicion.id}}" method="post"
-                    style="display:inline;">
+                <a th:href="@{'/web/exposiciones/editar/' + ${exposicion.id}}" class="btn btn-enviar">Editar</a>
+                <form th:action="@{'/web/exposiciones/borrar/' + ${exposicion.id}}" method="post">
                     <button type="submit" class="btn btn-eliminar"
                         onclick="return confirm('¿Eliminar esta exposición?');">Eliminar</button>
                 </form>
@@ -36,7 +34,6 @@
             </div>
         </div>
 
-        <!-- Datos de la exposición -->
         <div class="card">
             <div class="detail-grid">
                 <div class="detail-item">
@@ -54,7 +51,6 @@
             </div>
         </div>
 
-        <!-- Obras -->
         <h2 class="section-title">Obras en esta exposición</h2>
 
         <div th:if="${#lists.isEmpty(obras)}" class="alert alert-info">
@@ -83,7 +79,7 @@
                         <td>
                             <div class="td-actions">
                                 <a th:href="@{'/web/obras/editar/' + ${obra.id}}"
-                                    class="btn btn-sm btn-editar">Editar</a>
+                                    class="btn btn-sm btn-enviar">Editar</a>
                                 <form th:action="@{'/web/obras/borrar/' + ${obra.id}}" method="post">
                                     <button type="submit" class="btn btn-sm btn-eliminar"
                                         onclick="return confirm('¿Eliminar esta obra?');">Eliminar</button>
@@ -95,7 +91,6 @@
             </table>
         </div>
 
-        <!-- Valor total -->
         <div class="total-panel">
             <span class="total-label">Valor total de las obras</span>
             <span class="total-value" th:text="'€ ' + ${valorTotal}"></span>
